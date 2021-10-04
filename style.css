@@ -11,7 +11,7 @@ body{
 
 .header-container{
     height: 100vh;
-    width: 100wh;
+    width: 100%;
     background-color: #1e1e2a;
     background-image: url('./img/pessoas-construindo-pc.png');
     background-size: 150px;
@@ -40,6 +40,7 @@ h2{
     display: flex;
 }
 .social-media a {
+    width:100%;
     text-decoration: none;
     color: #ffff;
     padding: 1rem 4rem;
@@ -104,7 +105,7 @@ a:hover { /*quando colocar o mouse em cima muda de cor*/
     background-color: transparent;
     height: 4px;
     width: 10px;
-    border-radius:50px ;
+    border-radius:50% ;
     box-shadow: 0px 0px 0px 0px #ffff;
     z-index: -1;
     transition: 400ms ease-in-out 0;
@@ -118,6 +119,7 @@ a:hover { /*quando colocar o mouse em cima muda de cor*/
     height: 100vh;
     display: flex;
     justify-content: center;
+    align-items: center;
     z-index: 2;
     opacity: 0;/*deixar a nava escondida*/
     visibility: hidden;
@@ -168,6 +170,107 @@ a:hover { /*quando colocar o mouse em cima muda de cor*/
 #toogle:checked ~ .menu-itens {
     visibility: visible;
     opacity: 1;
+}
+
+/*cards*/
+
+.container {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 3rem 0;    
+}
+.card-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 90%
+}
+.card{
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    margin: 3rem 0 0 0;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #3f3f97;
+    background-image: url('./img/projeto.jpg');
+    background-position:center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: grayscale(0.5); /*deixar a figura cinza*/
+    color: #1e1e2a;
+    cursor:ponter;
+    transition: 0.5s ease-in-out;
+}
+.card-text{
+    width: 40%;
+    letter-spacing: 1px;
+    color: #1e1e2a;
+}
+.card-wrapper{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    position: relative;
+    
+
+}
+/*animação do projeto*/
+.card-wrapper::before{
+    content: '';
+    position: absolute;
+    height: 100px;
+    width: 100PX;
+    border-radius: 50%;
+    display: block;
+    border: 1px solid #ffff;
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+}
+
+.card-wrapper h2{
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing:4px;
+    margin: 0;
+    transition: 0.5 ease-in-out;
+}
+.card-wrapper p{
+    font-size: 0;
+    visibility: visible;
+    opacity:0;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.5s ease-in-out;
+}
+.card:hover{
+    filter: unset;
+}
+.card:hover > .card-wrapper::before{
+    height: 200px;
+    width: 200px;
+    opacity: 1;
+}
+/*Aparecer o p*/
+.card:hover > .card-wrapper p{
+    opacity: 1;
+    visibility: visible;
+    font-size: 14px;
+}
+.footer{
+    width:100%;
+    height: 100px;
+    background-color: #1e1e2a;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffff;
 }
 
 
